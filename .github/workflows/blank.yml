@@ -1,0 +1,12 @@
+name: Keep Codespace Alive
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Keep-Alive Request
+        run: curl -X GET https://jubilant-trout-wr9vqq6qr55wcgq65.github.dev/ -H "Authorization: Bearer ${{ }}"
