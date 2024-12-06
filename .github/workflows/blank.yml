@@ -2,11 +2,17 @@ name: Keep Codespace Alive
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/15 * * * *"  # Alle 15 Minuten ausführen
+  workflow_dispatch: # Optional: Manuell starten
 
 jobs:
   keep-alive:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Send Keep-Alive Request
-        run: curl -X GET https://jubilant-trout-wr9vqq6qr55wcgq65.github.dev/ -H "Authorization: Bearer ${{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}}"
+      - name: Ping Codespace
+        run: |
+          curl -X GET \
+          -H "Authorization: token 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" \
+          -H "Accept: application/vnd.github+json" \
+          https://jubilant-trout-wr9vqq6qr55wcgq65.github.dev/
