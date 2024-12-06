@@ -2,7 +2,7 @@ name: CS
 
 on:
   schedule:
-    - cron: "*/15 * * * *"  # Alle 15 Minuten ausführen
+    - cron: "*/5 * * * *"  # Alle 15 Minuten ausführen
   workflow_dispatch: # Optional: Manuell starten
 
 jobs:
