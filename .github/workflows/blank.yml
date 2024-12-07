@@ -3,7 +3,7 @@ name: Keep Codespace Alive
 on:
   schedule:
     - cron: '*/5 * * * *'  # Führt die Action alle 5 Minuten aus
-
+  workflow_dispatch:
 jobs:
   keep_alive:
     runs-on: ubuntu-latest
